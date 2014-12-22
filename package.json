@@ -1,0 +1,43 @@
+{
+  "name": "wordpress-gulp-bower-sass",
+  "version": "0.0.4",
+  "description": "A WordPress/Gulp/Bower/Sass starter kit",
+  "homepage": "https://github.com/synapticism/wordpress-gulp-bower-sass",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synapticism/wordpress-gulp-bower-sass.git"
+  },
+  "keywords": [
+    "wordpress",
+    "gulp",
+    "bower",
+    "sass"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Synaptic",
+  "license": "GNU General Public Licence 2.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^1.x",
+    "gulp": "^3.8.x",
+    "gulp-autoprefixer": "^2.x",
+    "gulp-cache": "^0.2.x",
+    "gulp-concat": "^2.x",
+    "gulp-imagemin": "^2.x",
+    "gulp-jshint": "^1.x",
+    "gulp-livereload": "^2.x",
+    "gulp-load-plugins": "^0.8.x",
+    "gulp-minify-css": "^0.3.x",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-uglify": "^1.0.x",
+    "gulp-util": "^3.0.x"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}

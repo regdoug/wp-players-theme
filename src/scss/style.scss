@@ -1,0 +1,235 @@
+// Import theme information
+@import "theme";
+
+// Foundation settings
+@import "settings";
+
+// Normalize.css
+@import "base_normalize";
+
+// Or selectively include components
+ @import
+//   "foundation/scss/foundation/components/accordion",
+//   "foundation/scss/foundation/components/alert-boxes",
+   "foundation/scss/foundation/components/block-grid",
+//   "foundation/scss/foundation/components/breadcrumbs",
+//   "foundation/scss/foundation/components/button-groups",
+   "foundation/scss/foundation/components/buttons",
+//   "foundation/scss/foundation/components/clearing",
+//   "foundation/scss/foundation/components/dropdown",
+//   "foundation/scss/foundation/components/dropdown-buttons",
+//   "foundation/scss/foundation/components/flex-video",
+   "foundation/scss/foundation/components/forms",
+   "foundation/scss/foundation/components/grid",
+//   "foundation/scss/foundation/components/inline-lists",
+//   "foundation/scss/foundation/components/joyride",
+//   "foundation/scss/foundation/components/keystrokes",
+//   "foundation/scss/foundation/components/labels",
+//   "foundation/scss/foundation/components/magellan",
+//   "foundation/scss/foundation/components/orbit",
+//   "foundation/scss/foundation/components/pagination",
+//   "foundation/scss/foundation/components/panels",
+//   "foundation/scss/foundation/components/pricing-tables",
+//   "foundation/scss/foundation/components/progress-bars",
+//   "foundation/scss/foundation/components/reveal",
+//   "foundation/scss/foundation/components/side-nav",
+//   "foundation/scss/foundation/components/split-buttons",
+//   "foundation/scss/foundation/components/sub-nav",
+//   "foundation/scss/foundation/components/switch",
+   "foundation/scss/foundation/components/tables",
+//   "foundation/scss/foundation/components/tabs",
+//   "foundation/scss/foundation/components/thumbs",
+//   "foundation/scss/foundation/components/tooltips",
+   "foundation/scss/foundation/components/top-bar",
+   "foundation/scss/foundation/components/type",
+   "foundation/scss/foundation/components/offcanvas",
+   "foundation/scss/foundation/components/visibility";
+
+
+// --------------------------------------
+//         New Top Bar
+// ---------------------------------------
+
+// Override style from default top bar
+.top-bar {
+    img {
+        height:$topbar-height;
+    }
+
+    .name h1 {
+        height:$topbar-height;
+        a {
+            display: inline;
+            padding: rem-calc(0 5);
+            vertical-align: top;
+        }
+    }
+}
+
+// Display styles for logo
+.ritlogo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin-top: rem-calc(10);
+}
+.ritabbr {
+    @extend .ritlogo;
+    background-image: url('img/rit_30.png');
+    height: rem-calc(30);
+    padding-left: rem-calc(101);
+}
+.ritlong {
+    @extend .ritlogo;
+    background-image: url('img/rit_long.min.svg');
+    height: rem-calc(26);
+    padding-left: rem-calc(320);
+    margin: 0 0 0.3rem;
+    background-position: bottom;
+    background-size: rem-calc(265.5 18);
+}
+
+// RIT Search
+
+.ritsearch input {
+    box-shadow: none;
+    border-right: none;
+    padding-top: 0.2rem;
+    padding-bottom: 0.10rem;
+    border-radius: 0.6rem 0px 0px 0.6rem;
+    border-right: none;
+    margin: 0;
+    height: 1.6rem;
+}
+.search-button {
+    @include button-base;
+/*    @include button($bg:$body-bg);
+    @include button-size($button-med, false); */
+    @include button-style($body-bg, false, false, #ccc, #eee);
+/*    color: $body-font-color; */
+    height: 1.6rem;
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.2rem 0.10rem !important;
+    border-radius: 0px 0.6rem 0.6rem 0px;
+    border-left: none;
+    margin: 0;
+}
+li.ritsearch {
+    padding: 0.3rem 17px;
+}
+.ritsearch i {
+    font-size: initial;
+}
+
+// Offcanvas Menu
+
+// Allow the hamburger icon to be displayed in the top bar (instead of the tab bar)
+.top-bar .menu-icon {
+    text-indent: $tabbar-menu-icon-text-indent;
+    width: $topbar-height;
+    height: $topbar-height;
+    display: block;
+    padding: $tabbar-menu-icon-padding;
+    color: $tabbar-menu-icon-color;
+    position: relative;
+    transform: translate3d(0,0,0);
+
+    // @include for the hamburger menu-icon
+    //
+    // Arguments as follows: ($width, $left, $top, $thickness, $gap, $color, $hover-color)
+    // $width - Width of hamburger icon in rem Default: $tabbar-hamburger-icon-width.
+    // $left - If false, icon will be centered horizontally || explicitly set value in rem Default: $tabbar-hamburger-icon-left= False
+    // $top - If false, icon will be centered vertically || explicitly set value in rem Default: = False
+    // $thickness - thickness of lines in hamburger icon, set value in px Default: $tabbar-hamburger-icon-thickness = 1px
+    // $gap - spacing between the lines in hamburger icon, set value in px Default: $tabbar-hamburger-icon-gap = 6px
+    // $color - icon color Default: $tabbar-menu-icon-color
+    // $hover-color - icon color when hovered Default: $tabbar-menu-icon-hover
+    // $offcanvas - Set to true
+    @include hamburger($tabbar-hamburger-icon-width, $tabbar-hamburger-icon-left, $tabbar-hamburger-icon-top, $tabbar-hamburger-icon-thickness, $tabbar-hamburger-icon-gap, $tabbar-menu-icon-color, $tabbar-menu-icon-hover, true)
+}
+
+//Allow for forms, etc in the offcanvas menu
+.off-canvas-list div.row {
+    padding:0.66667rem;
+}
+
+
+// ----------------------------
+//         Players Logo
+// ----------------------------
+
+#logo {
+    position:fixed;
+    bottom:0;
+    left: 10px;
+    z-index:750;
+    background-color: #FFF;
+    background-color: rgba(255,255,255,0.8);
+    padding-right:1rem;
+    
+    img {
+        position: absolute;
+        bottom: 0;
+        height: rem-calc(128);
+    }
+    h2 {
+        padding-left: rem-calc(112);
+    }
+    h3 {
+        padding-left: rem-calc(15);
+    }
+    .wrap-inner {
+        position: relative;
+    }
+}
+
+// -----------------------------
+//            Content
+// -----------------------------
+
+#content {
+    article > div {
+        // Separator line between articles
+        border-bottom: 3px groove #c7c7c7;
+        padding: 10px;
+        //background-color: AliceBlue;
+        background-color: #FFF;
+        background-color: rgba(255,255,255,0.8);
+    }
+
+    // The coverimg is right below the title of the article
+    // The background url will be specified in the main HTML
+    .coverimg {
+        background-size: cover;
+        height: 10em;
+        width: 100%;
+    }
+}
+
+@media #{$medium-up} {
+    #content {
+        article {
+            // Padding and min-height are to ensure image visibility
+            padding:45px;
+            min-height: 40rem;
+            //background: url("http://sites.regdoug.com/oldpoems/images/background.png") center no-repeat;
+            background-size: cover;
+        }
+        article > div {
+            // Remove separator line
+            border-bottom: none;
+            // Constrain width for floats
+            max-width: 450px;
+        }
+        // Float articles over images
+        article:nth-child(odd) > div {
+            float:right;
+        }
+        article:nth-child(even) > div {
+            float:left;
+        }
+    }
+    .inner-wrap > .row {
+        max-width: 100% !important;
+    }
+}
