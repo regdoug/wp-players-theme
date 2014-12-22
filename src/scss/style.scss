@@ -166,6 +166,13 @@ li.ritsearch {
     background-color: #FFF;
     background-color: rgba(255,255,255,0.8);
     padding-right:1rem;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+    transform: rotateY(0deg);
+
+    &.rotate-away {
+        transform: rotateY(90deg);
+    }
     
     img {
         position: absolute;

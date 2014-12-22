@@ -80,7 +80,7 @@ gulp.task('scripts-extras', function() {
 
 // Copy images; minification occurs during packaging
 gulp.task('images', function() {
-  return gulp.src(source+'**/*(*.png|*.jpg|*.jpeg|*.gif)')
+  return gulp.src(source+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)')
   .pipe(gulp.dest(build));
 });
 

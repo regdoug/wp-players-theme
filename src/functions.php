@@ -1,12 +1,24 @@
 <?php
 
+$DEBUG = true;
+
 // Load parent theme
 
 function players_load_scripts() {
+    // We are using SASS, so the styles from Cornerstone are built into wp-players-theme/styles.css
+    wp_deregister_style('normalize');
+    wp_deregister_style('foundation_css');
+
     wp_enqueue_style(
-        'players_child_css',
-        get_stylesheet_directory_uri() . '/style.css',
+        'players_style_css',
+        get_stylesheet_directory_uri() . '/style.' . ($DEBUG)?'':'min.' . 'css',
         false,
+        'all'
+    );
+    wp_enqueue_script(
+        'players_app_css',
+        get_stylesheet_directory_uri() . '/js/core.' . ($DEBUG)?'':'min.' . 'js',
+        array('jquery'),
         'all'
     );
 }
@@ -22,9 +34,10 @@ function the_players_cover_image( $id ) {
     }*/
     if( has_post_thumbnail( $id ) ) {
         $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' );
-        echo "background-image: url('{$url[0]}');x-message: /thumbnail found for $id/;";
+        $debugmsg = ($DEBUG)?"x-message: /thumbnail found for $id/;":'';
+        echo "background-image: url('{$url[0]}');$debugmsg";
     } else {
-        echo "x-message: /no post thumbnail for $id/;";
+        if($DEBUG) echo "x-message: /no post thumbnail for $id/;";
     }
 }
 
