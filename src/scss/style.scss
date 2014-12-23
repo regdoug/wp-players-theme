@@ -56,37 +56,38 @@
         height:$topbar-height;
     }
 
-    .name h1 {
-        height:$topbar-height;
-        a {
-            display: inline;
-            padding: rem-calc(0 5);
-            vertical-align: top;
+    .name {
+        h1 {
+            height:$topbar-height;
+            a {
+                display: inline;
+                padding: rem-calc(0 5);
+                vertical-align: top;
+            }
+        }
+
+        // Display styles for logo
+        .ritlogo {
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+        }
+        span.ritabbr {
+            @extend .ritlogo;
+            background-image: url('img/rit_30.png');
+            height: rem-calc(30);
+            margin-top: (rem-calc(51) - rem-calc(30))/2;
+            padding-left: rem-calc(101);
+            line-height: 1em;
+        }
+        span.ritlong {
+            @extend .ritlogo;
+            background-image: url('img/rit_long.min.svg');
+            height: rem-calc(18);
+            padding-left: rem-calc(320);
+            background-position: bottom;
         }
     }
-}
-
-// Display styles for logo
-.ritlogo {
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    margin-top: rem-calc(10);
-}
-.ritabbr {
-    @extend .ritlogo;
-    background-image: url('img/rit_30.png');
-    height: rem-calc(30);
-    padding-left: rem-calc(101);
-}
-.ritlong {
-    @extend .ritlogo;
-    background-image: url('img/rit_long.min.svg');
-    height: rem-calc(26);
-    padding-left: rem-calc(320);
-    margin: 0 0 0.3rem;
-    background-position: bottom;
-    background-size: rem-calc(265.5 18);
 }
 
 // RIT Search
@@ -107,7 +108,7 @@
     @include button-size($button-med, false); */
     @include button-style($body-bg, false, false, #ccc, #eee);
 /*    color: $body-font-color; */
-    height: 1.6rem;
+    height: 1.6rem !important;
     border: 1px solid #ccc;
     padding: 0.2rem 0.2rem 0.10rem !important;
     border-radius: 0px 0.6rem 0.6rem 0px;
@@ -238,5 +239,23 @@ li.ritsearch {
     }
     .inner-wrap > .row {
         max-width: 100% !important;
+    }
+}
+
+// -----------------------------
+//           Footer 
+// -----------------------------
+
+#footer {
+    background-color: $topbar-bg-color;
+    color: $tabbar-menu-icon-color;
+    padding: 2.5rem;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $tabbar-menu-icon-color;
+    }
+
+    ul {
+        list-style: none;
     }
 }
