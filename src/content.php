@@ -10,11 +10,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="<?php the_players_cover_image( get_the_ID() ) ?>">
     <div class="small-12 columns">
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-		<div class="featured-post">
-			<?php _e( 'Featured post', 'cornerstone' ); ?>
-		</div>
-		<?php endif; ?>
 	<header class="entry-header">
 		<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
