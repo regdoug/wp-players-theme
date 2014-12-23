@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes(); ?>>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
 
@@ -8,11 +12,6 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
 <?php wp_head(); ?>
-<?php 
-function the_players_logo( $height ) {
-  echo "<img height=$height src=\"{${get_stylesheet_directory_uri()}}/img/crappy-logo-trans.png\">";
-}
-players_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -20,7 +19,7 @@ players_head(); ?>
   <ul class="title-area">
     <li class="name"><h1>
         <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-            <img height=51 src="<?php echo get_stylesheet_directory_uri()?>/img/crappy-logo-trans.png">
+            <img height="51" src="<?php echo get_stylesheet_directory_uri()?>/img/crappy-logo-trans.png">
         </a>
         <a title="RIT Home" href="https://www.rit.edu/"><span class="ritabbr"><span class="ritlong show-for-large-up"></span></span></a>
     </h1></li>

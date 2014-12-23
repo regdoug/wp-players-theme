@@ -11,21 +11,24 @@ function players_load_scripts() {
 
     wp_enqueue_style(
         'players_style_css',
-        get_stylesheet_directory_uri() . '/style.' . ($DEBUG)?'':'min.' . 'css',
-        false,
-        'all'
+        get_stylesheet_directory_uri() . '/style.css'
+    );
+    wp_enqueue_style(
+        'foundation_icons_3_css',
+        'https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css'
     );
     wp_enqueue_script(
-        'players_app_css',
-        get_stylesheet_directory_uri() . '/js/core.' . ($DEBUG)?'':'min.' . 'js',
-        array('jquery'),
-        'all'
+        'players_core_js',
+        get_stylesheet_directory_uri() . '/js/core.js',
+        array('jquery','foundation_modernizr_js'),
+        false,
+        true
     );
 }
 
-function players_head() {
-    // print css for background images
-}
+// Override initialization code from cornerstone.  Our init code
+// is located in js/core.js
+function cornerstone_foundation_init() { }
 
 function the_players_cover_image( $id ) {
 /*    global $players_cover_images;
