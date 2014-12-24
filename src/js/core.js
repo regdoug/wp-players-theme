@@ -1,4 +1,5 @@
 /* Custom functions */
+jQuery.noConflict();
 
 /* Set up foundation off canvas menu */
 jQuery(document).foundation({
