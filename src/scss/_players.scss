@@ -4,9 +4,19 @@
  */
 
 // --------------------------------------
-//               Top Bar
+//              Variables 
 // ---------------------------------------
 
+// Format posts
+$header-height-mobile: 10rem;
+$article-padding: 1rem;
+$article-bg: #fff;
+$article-bg-trans: rgba($article-bg ,0.8);
+$article-height: 40rem;
+$article-max-width: rem-calc(450);
+
+// Logos
+$playerslogo-height: rem-calc(128);
 // RIT logo is the letters R I T
 $ritlogo-height: rem-calc(30);
 $ritlogo-width: $ritlogo-height * 101/30;
@@ -14,6 +24,11 @@ $ritlogo-width: $ritlogo-height * 101/30;
 $ritlong-height: rem-calc(18);
 $ritlong-width: $ritlong-height * 590/40;
 $ritlong-spacing: 2rem;
+
+// --------------------------------------
+//               Top Bar
+// ---------------------------------------
+
 .top-bar {
     // logo image
     img {
@@ -102,6 +117,7 @@ $ritlong-spacing: 2rem;
     color: $tabbar-menu-icon-color;
     position: relative;
     transform: translate3d(0,0,0);
+    margin-left: $article-padding;
 
     // @include for the hamburger menu-icon
     //
@@ -114,7 +130,11 @@ $ritlong-spacing: 2rem;
     // $color - icon color Default: $tabbar-menu-icon-color
     // $hover-color - icon color when hovered Default: $tabbar-menu-icon-hover
     // $offcanvas - Set to true
-    @include hamburger($tabbar-hamburger-icon-width, $tabbar-hamburger-icon-left, $tabbar-hamburger-icon-top, $tabbar-hamburger-icon-thickness, $tabbar-hamburger-icon-gap, $tabbar-menu-icon-color, $tabbar-menu-icon-hover, true)
+    @include hamburger($tabbar-hamburger-icon-width, $tabbar-hamburger-icon-left, $tabbar-hamburger-icon-top, $tabbar-hamburger-icon-thickness, $tabbar-hamburger-icon-gap, $tabbar-menu-icon-color, $tabbar-menu-icon-hover, true);
+
+    &:hover {
+        background-color: $off-canvas-label-bg !important;
+    }
 }
 
 //Allow for forms, etc in the offcanvas menu
@@ -130,11 +150,10 @@ $ritlong-spacing: 2rem;
 #logo {
     position:fixed;
     bottom:0;
-    left: 10px;
+    left: 0;
     z-index:750;
-    background-color: #FFF;
-    background-color: rgba(255,255,255,0.8);
-    padding-right:1rem;
+    background-color: $article-bg-trans;
+    padding-right: $article-padding;
     transition: transform 0.3s ease;
     transform-origin: left;
     transform: rotateY(0deg);
@@ -146,13 +165,13 @@ $ritlong-spacing: 2rem;
     img {
         position: absolute;
         bottom: 0;
-        height: rem-calc(128);
+        height: $playerslogo-height
     }
     h2 {
-        padding-left: rem-calc(112);
+        padding-left: $playerslogo-height + $article-padding;
     }
     h3 {
-        padding-left: rem-calc(15);
+        padding-left: $article-padding;
     }
     .wrap-inner {
         position: relative;
@@ -163,9 +182,6 @@ $ritlong-spacing: 2rem;
 //            Content
 // -----------------------------
 
-$header-height-mobile: 10rem;
-$article-padding: 1rem;
-
 .columns {
     padding-left: 0;
     padding-right: 0;
@@ -175,13 +191,10 @@ $article-padding: 1rem;
     article > div {
         // Separator line between articles
         border-bottom: 3px groove #c7c7c7;
-        //padding: 10px;
-        //background-color: AliceBlue;
-        background-color: #FFF;
-        background-color: rgba(255,255,255,0.8);
+        background-color: $article-bg-trans;
     }
 
-    // The coverimg is right below the title of the article
+    // The coverimg is behind the title of the article
     // The background url will be specified in the main HTML
     .coverimg {
         background-size: cover;
@@ -229,9 +242,8 @@ $article-padding: 1rem;
     #content {
         article {
             // Padding and min-height are to ensure image visibility
-            padding:45px;
-            min-height: 40rem;
-            //background: url("http://sites.regdoug.com/oldpoems/images/background.png") center no-repeat;
+            padding: 3rem;
+            min-height: $article-height;
             background-size: cover;
             background-position: center;
         }
@@ -239,7 +251,7 @@ $article-padding: 1rem;
             // Remove separator line
             border-bottom: none;
             // Constrain width for floats
-            max-width: 450px;
+            max-width: $article-max-width;
         }
         .coverimg {
             background-image: none !important;
