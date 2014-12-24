@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="<?php the_players_cover_image( get_the_ID() ) ?>">
     <div class="small-12 columns">
-	<header class="entry-header">
+        <header class="entry-header coverimg" style="<?php the_players_cover_image( get_the_ID(), true ) ?>">
 		<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php else : ?>
@@ -31,9 +31,17 @@
 	</div>
 	<?php endif; ?>
 
-	<footer class="entry-meta">
+        <footer class="entry-meta">
+                <?php $editurl = get_edit_post_link();
+                    if($editurl):
+                ?>
+                <span class="edit-link">
+                    <a class="post-edit-link tiny button" href="<?php echo $editurl ?>">
+                        <?php echo __( 'Edit', 'cornerstone' ) ?>
+                    </a>
+                </span>
+                <?php endif; ?>
 		<?php cornerstone_entry_meta(); ?>
-		<?php edit_post_link( __( 'Edit', 'cornerstone' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer>
     </div>
 </article>

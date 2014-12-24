@@ -163,11 +163,19 @@ $ritlong-spacing: 2rem;
 //            Content
 // -----------------------------
 
+$header-height-mobile: 10rem;
+$article-padding: 1rem;
+
+.columns {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #content {
     article > div {
         // Separator line between articles
         border-bottom: 3px groove #c7c7c7;
-        padding: 10px;
+        //padding: 10px;
         //background-color: AliceBlue;
         background-color: #FFF;
         background-color: rgba(255,255,255,0.8);
@@ -177,8 +185,43 @@ $ritlong-spacing: 2rem;
     // The background url will be specified in the main HTML
     .coverimg {
         background-size: cover;
-        height: 10em;
+        height: $header-height-mobile;
         width: 100%;
+        margin-bottom: $article-padding/2;
+
+        h2 {
+            padding: 0 $article-padding;
+            height: $header-height-mobile;
+            display: table-cell;
+            vertical-align: bottom;
+            text-shadow: 1px 2px 2px black;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .entry-content, footer {
+        padding: 0 $article-padding;
+    }
+
+    footer {
+        font-size: 0.7em;
+
+        .vcard {
+            @extend .label;
+            @extend .secondary;
+            border: none;
+            .fn {
+                font-size: inherit;
+            }
+        }
+    }
+
+    .edit-link {
+        float: right;
+        margin-left: $article-padding;
     }
 }
 
@@ -190,12 +233,25 @@ $ritlong-spacing: 2rem;
             min-height: 40rem;
             //background: url("http://sites.regdoug.com/oldpoems/images/background.png") center no-repeat;
             background-size: cover;
-            }
-            article > div {
+            background-position: center;
+        }
+        article > div {
             // Remove separator line
             border-bottom: none;
             // Constrain width for floats
             max-width: 450px;
+        }
+        .coverimg {
+            background-image: none !important;
+            height: auto;
+
+            h2 {
+                height: auto;
+                display: block;
+                text-shadow: none;
+                
+                a { color: inherit; }
+            }
         }
         // Float articles over images
         article:nth-child(odd) > div {

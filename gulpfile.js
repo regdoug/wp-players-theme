@@ -12,6 +12,7 @@ var project     = 'wp-players-theme'
 // Initialization sequence
 var gulp        = require('gulp')
   , gutil       = require('gulp-util')
+  , gprint      = require('gulp-print')
   , plugins     = require('gulp-load-plugins')({ camelize: true }) // This loads all modules prefixed with "gulp-" to plugin.moduleName
   , del         = require('del')
 ;
@@ -21,7 +22,7 @@ var gulp        = require('gulp')
 // ==== STYLES ==== //
 
 // Stylesheet handling; don't forget `gem install sass`; Compass is not included by default here
-gulp.task('styles', function() {
+gulp.task('styles', ['styles-static'], function() {
   return gulp.src([source+'scss/*.scss', '!'+source+'scss/_*.scss']) // Ignore partials
   .pipe(plugins.rubySass({
     loadPath: bower // Adds the `bower_components` directory to the load path so you can @import directly
@@ -34,7 +35,11 @@ gulp.task('styles', function() {
   .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
   .pipe(gulp.dest(build));
 });
-
+// Copy static stylesheets and font files
+gulp.task('styles-static', function() {
+  return gulp.src(source+'css/**/*')
+  .pipe(gulp.dest(build+'css/'));
+});
 
 
 // ==== SCRIPTS ==== //
@@ -49,7 +54,7 @@ gulp.task('scripts', ['scripts-lint', 'scripts-core', 'scripts-extras'], functio
 
 // Lint scripts for errors and sub-optimal formatting
 gulp.task('scripts-lint', function() {
-  return gulp.src(source+'js/**/*.js')
+  return gulp.src([source+'js/**/*.js'])
   .pipe(plugins.jshint('.jshintrc'))
   .pipe(plugins.jshint.reporter('default'));
 });

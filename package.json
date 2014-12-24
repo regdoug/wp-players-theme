@@ -14,7 +14,7 @@
     "sass"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install"
   },
   "author": "Alexander Synaptic",
   "license": "GNU General Public Licence 2.0",
@@ -32,12 +32,10 @@
     "gulp-livereload": "^2.x",
     "gulp-load-plugins": "^0.8.x",
     "gulp-minify-css": "^0.3.x",
+    "gulp-print": "^1.1.0",
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-uglify": "^1.0.x",
     "gulp-util": "^3.0.x"
-  },
-  "scripts": {
-    "postinstall": "bower install"
   }
 }
