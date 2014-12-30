@@ -151,8 +151,8 @@ $ritlong-spacing: 2rem;
     position: fixed;
     z-index: 750;
     width: 100%;
-    height: 100%;
-    top: 0;
+    height: auto;
+    bottom: 0;
     perspective: rem-calc(1200);
     transform-style: preserve-3d;
 }
