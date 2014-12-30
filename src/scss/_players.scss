@@ -211,7 +211,7 @@ $ritlong-spacing: 2rem;
         width: 100%;
         margin-bottom: $article-padding/2;
 
-        h2 {
+        h1, h2 {
             padding: 0 $article-padding;
             height: $header-height-mobile;
             display: table-cell;
@@ -266,7 +266,7 @@ $ritlong-spacing: 2rem;
             background-image: none !important;
             height: auto;
 
-            h2 {
+            h1, h2 {
                 height: auto;
                 display: block;
                 text-shadow: none;
