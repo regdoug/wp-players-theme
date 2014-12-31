@@ -19,7 +19,7 @@
   <ul class="title-area">
     <li class="name"><h1>
         <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-            <img height="51" src="<?php echo get_stylesheet_directory_uri()?>/img/crappy-logo-trans.png">
+            <img height="51px" src="<?php echo get_stylesheet_directory_uri()?>/img/logo150.png">
         </a>
         <a title="RIT Home" href="https://www.rit.edu/"><span class="ritabbr"><span class="ritlong show-for-large-up"></span></span></a>
     </h1></li>
@@ -51,7 +51,7 @@
         <div id="logo">
         <a href="#">
             <div class="wrap-inner">
-            <img height=96 src="<?php echo get_stylesheet_directory_uri()?>/img/crappy-logo-trans.png">
+            <img height="96px" src="<?php echo get_stylesheet_directory_uri()?>/img/logo150.png">
             <h2>RIT&nbsp;Players</h2>
             </div>
         </a>
