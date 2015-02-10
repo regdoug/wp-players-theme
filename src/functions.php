@@ -38,11 +38,11 @@ function the_players_cover_image( $id, $scrim=false ) {
     }
     if( has_post_thumbnail( $id ) ) {
         $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' );
-        $debugmsg = ($DEBUG)?"x-message: /thumbnail found for $id/;":'';
+        $debugmsg = '';//($DEBUG)?"x-message: /thumbnail found for $id/;":'';
         $scrimbg = ($scrim)?"$scrim,":'';
         echo "background-image: $scrimbg url('{$url[0]}');$debugmsg";
     } else {
-        if($DEBUG) echo "x-message: /no post thumbnail for $id/;";
+        //if($DEBUG) echo "x-message: /no post thumbnail for $id/;";
     }
 }
 
