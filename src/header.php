@@ -52,10 +52,10 @@
         <a href="#">
             <div class="wrap-inner">
             <img height="96px" src="<?php echo get_stylesheet_directory_uri()?>/img/logo150.png">
-            <h2>RIT&nbsp;Players</h2>
+            <h2><?php bloginfo('title'); ?></h2>
             </div>
         </a>
-        <h3>Meetings Every Tuesday at 8pm</h3>
+        <h3><?php bloginfo('description'); ?></h3>
         </div>
     </div>
 
