@@ -1,5 +1,7 @@
 # Repository Description
 
+[![Join the chat at https://gitter.im/regdoug/wp-players-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/regdoug/wp-players-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a Wordpress 4 theme using the design from [`regdoug/ritplayers-web`](https://github.com/regdoug/ritplayers-web/).  It is built using [Foundation](http://foundation.zurb.com).
 
 The theme itself includes a topbar compliant with the Rochester Institute of Technology branding guidelines and each post has an image background.
